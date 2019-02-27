@@ -1,0 +1,176 @@
+*{
+    margin:0px;       
+}
+body{
+    width:100vw;
+    height:100vh;
+    font-size:12px;
+    background-size:300% 300%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    .wrapper{
+        width:100vw;
+        height:100vh;
+        background-position: center center;
+        padding-top: 65px;
+        box-sizing:border-box;
+        .song-showimg{
+            width: 60vw;
+            height: 60vw;
+            margin: 0px auto;
+            background: #000;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items:center;
+            img{
+                width: 50vw;
+                height: 50vw;
+                border-radius: 50%;
+                // transform: rotate(360deg);
+                // transition:transform 20s;
+                // animation: turning 20s infinite;
+                &.playing{
+                    animation:turning 10s infinite linear;
+                }
+            }
+        }
+        .song-title{
+            margin-top:30px;
+            width:100%;
+            color:#fff;
+            text-align: center;
+            .song-name{
+                font-weight: 700;
+                font-size: 25px;
+            }
+            .song-songer{
+                margin-top:10px;
+            }
+            .song-album{
+                margin-top:5px;
+            }
+        }
+        .bar{
+            margin-top:30px;
+            width: 100%;
+            height: 50px;
+            // line-height:50px;
+            // border:1px solid blue;
+            font-size:18px;
+            color:#fff;
+            display:flex;
+            justify-content: space-around;
+            align-items: center;
+            .start{
+                width:50px;
+            }
+            .pro{
+                width: 68%;
+                height: 2px;
+                background: rgba(255,255,255,0.5);
+                .pro-show{
+                    width: 0%;
+                    height: 2px;
+                    background:#fff;
+                    .pro-btn{
+                        width: 30px;
+                        height: 30px;
+                        float: right;
+                        margin-top:-15px;
+                        // border:1px solid red;
+                        &::after{
+                            content:'';
+                            display: inline-block;
+                            width: 6px;
+                            height: 6px;
+                            transform:translateY(-5%) translateX(24px);
+                            background: #fff;
+                            border-radius:50%;
+                        }
+                    }
+                }
+            }
+            .end{
+                width:50px;
+            }
+        }
+        .footer{
+            width: 100%;
+            height:60px;
+            display: flex;
+            position: absolute;
+            bottom:0px;
+            .control{
+                flex:1;
+                background-repeat: no-repeat;
+                background-size: 25px;
+                background-position: center center;
+            }
+            .like{
+                 background-image: url('../img/icon-like.png');
+                 &.liking{
+                    background-image: url('../img/icon-like-solid.png');
+                 }
+            }
+            .prev{
+                background-image: url('../img/icon-prev.png');
+            }
+            .play{
+                background-image: url('../img/icon-play.png');
+                &.playing{
+                    background-image: url('../img/icon-pause.png');
+                }
+            }
+            .next{
+                background-image: url('../img/icon-next.png');
+            }
+            .playlist{
+                background-image: url('../img/icon-playlist.png');
+                background-repeat: no-repeat;
+                background-size: 30px;
+                background-position: center center;
+            }
+        }
+        .songlist{
+            width: 100%;
+            list-style: none;
+            padding: 0;
+            position: fixed;
+            bottom: 0px;
+            left: 0px;
+            right:0px;
+            transform: translateY(100%);
+            color:rgb(43, 31, 31);
+            font-size: 18px;
+            font-weight: 700;
+            transition:transform 0.5s linear;
+            &.show{
+            transform: translateY(0px);  
+            }
+            .close{
+                // position: absolute;
+                // top:0px;
+                // right:0px;
+                // transform: rotate(45deg);
+                text-transform: capitalize;
+                font-size:25px;
+                font-weight: 700;
+                // background:rgba(255,255,255,0.4);
+            }
+            li{
+                background:rgba(255,255,255,0.4);
+                border-bottom:1px solid #000;
+            }
+        }
+
+    }
+}
+@keyframes turning{
+    0%{
+         transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
